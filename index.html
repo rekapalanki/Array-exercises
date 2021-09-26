@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>
+
+  </title>
+  <link rel="stylesheet" href="./base.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <div class="exercises wrapper">
+    <h1>Array methods exercise</h1>
+    <p>Below you can find the exercises for an array method training. Feel free to use your favourite online or desktop
+      text editor. You may also use the console for these tasks as the arrays are pre-defined in this script. If you are
+      ready with your task and would like to compare with my solution or if you feel stucked push the "Hint" button to
+      find the solution.</p>
+
+    <h2>STATIC METHODS</h2>
+
+    <div class="exercise" id="from">
+      <h2>Exercise Array.from() </h2>
+      <p class="exerciseTask">Make a function that creates a range from x to y with Array.from()</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const newArray = Array.from({ length: 10 }, function (item, index) {<br>
+            return index;<br>
+          });<br>
+        </code><br>
+        Returns: <br>
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="isArray">
+      <h2>Exercise Array.isArray() </h2>
+      <p class="exerciseTask">Check if the last array you created is really an array with Array.isArray() </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const isArray = Array.isArray(newArray); <br>
+        </code><br>
+        Returns: <br>
+        true
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="objectArrayMethods">
+      <h2>Object array methods: Object.entries(), Object.keys, Object.values() </h2>
+      <p class="exerciseTask">
+        Take the meats object and make three arrays with Object.entries(), Object.keys, Object.values() <br><br>
+        Extra task: <br>
+        Loop over the object entries and display meat and quantity.</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code:<br>
+        <code>
+        const myEntries = Object.entries(meats);<br>
+        const myKeys = Object.keys(meats);<br>
+        const myValues = Object.values(meats);</code><br><br>
+
+        Returns:<br>
+        myEntries:<br>
+        (3) [Array(2), Array(2), Array(2)]<br>
+        0: (2) ['beyond', 10]<br>
+        1: (2) ['beef', 5]<br>
+        2: (2) ['pork', 7]<br>
+        length: 3<br>
+        [[Prototype]]: Array(0)<br><br>
+
+        myKeys:<br>
+        (3) ['beyond', 'beef', 'pork']<br><br>
+
+        myValues:<br>
+        (3) [10, 5, 7]<br><br>
+        Extra task: <br>
+        <code>Object.entries(meats).forEach((meat) => { <br>
+          const meatType = meat[0]; <br>
+          const qty = meat[1] <br> 
+          console.log(meatType, qty)}); 
+        </code><br><br>
+        Destructuring variables: <br>
+        <code>Object.entries(meats).forEach((meat) => { <br>
+          const [meatType, qty] = meat; <br>
+          console.log(meatType, qty)}); 
+        </code> <br><br>
+        Destructuring the parameters: <br>
+        <code>Object.entries(meats).forEach(([meatType, qty]) => {console.log(meatType, qty)});
+        </code><br>
+      </p>
+      <br>
+    </div>
+
+    <h2>INSTANCE METHODS </h2>
+
+    <div class="exercise" id="join">
+      <h2>Use join() for joining array items</h2>
+      <p class="exerciseTask">Display all bun types with " or " - use join() </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const bunsJoin = buns.join(', '); <br>
+        </code><br>
+        Returns:<br>
+        'egg, wonder, brioche'
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="split">
+      <h2>Use split() to split a string</h2>
+      <p class="exerciseTask">We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into a
+        string </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const stringSplit = 'hot dogs,hamburgers,sausages,corn'.split(','); <br>
+        </code><br>
+        Returns:<br>
+        (4) ['hot dogs', 'hamburgers', 'sausages', 'corn']
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="popPush">
+      <h2>Use pop(), push(), shift(), unshift() methods</h2>
+      <p class="exerciseTask">Take the last item off toppings with pop().<br>
+        Add it back with push().<br>
+        Take the first item off toppings with shift().<br>
+        Add it back in with unshift(). </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code:<br>
+        <code>
+          const lastTopping = toppings.pop();<br>
+          toppings.push(lastTopping);<br>
+          const firstTopping = toppings.shift();<br>
+          toppings.unshift(firstTopping);<br>
+        </code><br>
+        Returns:<br>
+        lastTopping: 'Cheese'<br>
+        toppings: (10) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles',
+        'Onions']<br>
+        toppings.push(lastTopping); <br>
+        toppings: (11) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles',
+        'Onions', 'Cheese']<br>
+        firstTopping: 'Mushrooms '<br>
+        toppings.unshift(firstTopping)<br>
+        toppings: (11) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles',
+        'Onions', 'Cheese']<br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="popPushImmutable">
+      <h2>Use pop(), push(), shift(), unshift() immutable </h2>
+      <p class="exerciseTask">Apply pop(), push(), shift(), unshift() for toppings array, now immutable. Use spreads
+        and new variables.</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code:<br>
+        <code>
+          const toppingsCopy = [...toppings];<br>
+          const topCopyLast = toppingsCopy.pop();<br>
+          toppingsCopy.push(topCopyLast);<br>
+          const topCopyFirst = toppingsCopy.shift();<br>
+          toppingsCopy.unshift(topCopyFirst); <br>
+        </code><br>
+        Returns:<br>
+        toppingsCopy: (11) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon',
+        'Pickles', 'Onions', 'Cheese']<br>
+        topCopyLast: 'Cheese'<br>
+        toppingsCopy.push(topCopyLast)<br>
+        topCopyFirst: 'Mushrooms'<br>
+        toppingsCopy.unshift(topCopyFirst): (11) ['Mushrooms ', 'Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce',
+        'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese']<br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="copy">
+      <h2>Copying an array with slice(), copy with a spread</h2>
+      <p class="exerciseTask">Make a copy of the toppings array with slice(). <br>
+        Make a copy of the toppings array with a spread.</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code:<br>
+        <code>
+          const newToppings = toppings.slice();<br>
+          const newToppings2 = [...toppings];<br>
+        </code><br>
+        Returns:<br>
+        newToppings: (11) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon',
+        'Pickles', 'Onions', 'Cheese'] <br>
+        newToppings2: (11) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon',
+        'Pickles', 'Onions', 'Cheese'] <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="splice">
+      <h2>Use splice() to exclude array items</h2>
+      <p class="exerciseTask">Take out items 3 to 5 of your new toppings array with splice()</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          newToppings.splice(3,3);<br>
+        </code><br>
+
+        Returns:<br>
+        (3) ['Chili', 'Lettuce', 'Avocado'] <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="indexOf">
+      <h2>Finding items with indexOf() / lastIndexOf()</h2>
+      <p class="exerciseTask">Find the index of Avocado within toppings with indexOf() / lastIndexOf().</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          toppings.indexOf('Avocado');<br>
+        </code><br>
+        Returns:<br>
+        5 <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="includes">
+      <h2>Checking an array item with includes()</h2>
+      <p class="exerciseTask">Check if Mayonnaise is in the toppings with includes(). <br>
+        Add it if it's not.</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const mayonnaiseIncluded = toppings.includes('Mayonnaise'); <br>
+          if(!mayonnaiseIncluded) {toppings.push('Mayonnaise')}; <br>
+        </code><br>
+        Returns:<br>
+        false <br>
+        (12) ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions',
+        'Cheese', 'Mayonnaise'] <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="reverse">
+      <h2>Using reverse() with conditional </h2>
+      <p class="exerciseTask">Flip those toppings around with reverse() </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const reversedToppings = [...toppings].reverse(); <br>
+        </code><br>
+        Returns:<br>
+        (11) ['Cheese', 'Onions', 'Pickles', 'Bacon', 'Chiles', 'Avocado', 'Lettuce', 'Chili', 'Eggs', 'Tomatoes',
+        'Mushrooms '] <br>
+      </p>
+      <br>
+    </div>
+
+    <h2>CALLBACK METHODS </h2>
+
+    <div class="exercise" id="find">
+      <h2>Find an item with find()</h2>
+      <p class="exerciseTask">
+        Take the feedback array. Find the first rating that talks about a burger with find(). <br><br>
+        Extra task: <br>
+        Turn your code into an arrow function with implicit return. <br>
+        Create a re-usable callback function. <br>
+      </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code:<br>
+        <code>
+          const findBurg = feedback.find(rating => rating.comment.includes('burg'));
+        </code><br><br>
+        Returns:<br>
+        {comment: 'Love the burgs', rating: 4} <br><br>
+        Turn your code into an arrow function with implicit return: <br>
+        <code>
+          const findBurgRating = feedback.find((feedb) => feedb.comment.includes('burg'));<br>
+        </code> <br>
+        Create a re-usable callback function: <br>
+        <code>
+          function findByWord(word) { <br>
+            // since the callback does not take in more than 3 parameters, we parameter the search term here <br>
+            return function (singleFeedback) { <br>
+              // the higher order function iterates through all instances of the range, we parameter each instances as 'singleFeedback' <br>
+              return singleFeedback.comment.includes(word); // this represents the object structure, here, we are looking for a rating which includes a specific value <br>
+            }; <br>
+          } <br>
+          const burgRating = feedback.find(findByWord('burg')); <br>
+        </code>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="filterNumber">
+      <h2>Filter a conditional value with filter()</h2>
+      <p class="exerciseTask">Find all ratings in the feedback array that are above 2 with filter(). <br><br>
+        Extra task: <br>
+        Create a re-usable callback function. <br></p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const goodReviews = feedback.filter((review) => review.rating > 2);
+          console.table(goodReviews);
+        </code><br><br>
+        Returns:<br>
+        0 'Love the burgs' 4 <br>
+        1 'Smoothies are great, liked the burger too' 5 <br>
+        2 'Ambiance needs work' 3 <br><br>
+        Extra task: <br>
+        Create a re-usable callback function. <br>
+        <code>
+          function filterByMinValue(minValue) { <br>  
+            return function (review) { <br>
+              return review.rating > minValue; <br>
+            }; <br>
+          } <br>
+          const goodReviews = feedback.filter(filterByMinValue(2)); <br>
+          console.table(goodReviews); <br>
+        </code>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="filterString">
+      <h2>Filter a string with filter()</h2>
+      <p class="exerciseTask">Find all ratings that talk about a burger with filter(). <br><br>
+        Extra task: <br>
+        Utilize the reusable function you created in the find() exercise. </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const allBurgRatings = feedback.filter((singleFeedback) => singleFeedback.comment.includes('burg')); <br>
+          console.table(allBurgRatings); <br>
+        </code><br>
+        Returns:<br>
+        0 'Love the burgs' 4 <br>
+        1 'Smoothies are great, liked the burger too' 5 <br><br>
+        Extra task: <br>
+        Utilize the reusable function you created in the find() exercise. <br>
+        <code>
+          const allBurgRatings = feedback.filter(findByWord('burg'));
+        </code>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="removeRating">
+      <h2>Removing an item</h2>
+      <p class="exerciseTask">Remove the one star rating however you like! </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const legitComment = feedback.filter((feedb) => feedb.rating !== 1); <br>
+        </code><br>
+        Returns:<br>
+        (4) [{…}, {…}, {…}, {…}] <br>
+        0: {comment: 'Love the burgs', rating: 4} <br>
+        1: {comment: 'Horrible Service', rating: 2} <br>
+        2: {comment: 'Smoothies are great, liked the burger too', rating: 5} <br>
+        3: {comment: 'Ambiance needs work', rating: 3} <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="some">
+      <h2>Use some() method</h2>
+      <p class="exerciseTask">Check if there is at least 5 of one type of meat with some(). </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          Object.values(meats).some((value) => value > 5);
+        </code><br><br>
+        Returns:<br>
+        true <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="every">
+      <h2>Use every() method</h2>
+      <p class="exerciseTask">Make sure we have at least 3 of every meat with every(). </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          Object.values(meats).every((value) => value > 3)
+        </code><br><br>
+        Returns:<br>
+        true <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="sortAlphabetically">
+      <h2>Sorting alphabetically with sort()</h2>
+      <p class="exerciseTask">Sort the toppings alphabetically with sort(). </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          toppings.sort();
+        </code><br><br>
+        Returns:<br>
+        (11) ['Avocado', 'Bacon', 'Cheese', 'Chiles', 'Chili', 'Eggs', 'Lettuce', 'Mushrooms ', 'Onions', 'Pickles',
+        'Tomatoes'] <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="sortValues">
+      <h2>Sorting based on values with sort()</h2>
+      <p class="exerciseTask">Sort the order totals from most expensive to least with .sort(). </p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          orderTotals.sort((a, b) => {
+            return b - a;
+            })
+        </code><br><br>
+        Returns:<br>
+        (8) [2222, 1644, 1002, 854, 634, 523, 342, 34] <br>
+      </p>
+      <br>
+    </div>
+
+    <div class="exercise" id="sortPricesObject">
+      <h2>Exercise Sorting prices with sort() </h2>
+      <p class="exerciseTask">Sort the prices object with sort(). <br><br>
+        Extra task: <br>
+        Turn it back into an object.</p>
+      <button class="hintButton">Hint</button><br>
+      <p class="exerciseSolution displayNone">Code: <br>
+        <code>
+          const pricesSorted = Object.entries(prices).sort((a, b) => { <br>
+            const valueA = a[1]; <br>
+            const valueB = b[1]; <br>
+            return valueA - valueB; <br>
+            });<br>
+            console.table(pricesSorted); <br>
+        </code><br>
+        Returns:<br>
+        (4) [Array(2), Array(2), Array(2), Array(2)] <br>
+        0: (2) ['corn', 234] <br>
+        1: (2) ['hotDog', 453] <br>
+        2: (2) ['sausage', 634] <br>
+        3: (2) ['burger', 765] <br>
+        <br>
+        Extra task: <br>
+        Turn it back into an object. <br>
+        <code>
+          Object.fromEntries(pricesSorted);
+        </code><br>
+      </p>
+      <br>
+    </div>
+  </div>
+
+  <div class="arrayDiv wrapper">
+    <h2>Arrays for the exercises</h2>
+    <p>Copy the below arrays to fulfil the exercises.
+      If you use the console, don't need to copy them as they are included in the script.</p>
+    <code>
+const toppings = [<br>
+'Mushrooms ',<br>
+'Tomatoes',<br>
+'Eggs',<br>
+'Chili',<br>
+'Lettuce',<br>
+'Avocado',<br>
+'Chiles',<br>
+'Bacon',<br>
+'Pickles',<br>
+'Onions',<br>
+'Cheese',<br>
+]; <br>
+<br>
+const buns = ['egg', 'wonder', 'brioche']; <br>
+<br>
+const meats = {<br>
+beyond: 10,<br>
+beef: 5,<br>
+pork: 7,<br>
+}; <br>
+<br>
+const prices = {<br>
+hotDog: 453,<br>
+burger: 765,<br>
+sausage: 634,<br>
+corn: 234,<br>
+}; <br>
+<br>
+const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222]; <br>
+<br>
+const feedback = [<br>
+{comment: 'Love the burgs', rating: 4 },<br>
+{comment: 'Horrible Service', rating: 2 },<br>
+{comment: 'Smoothies are great, liked the burger too', rating: 5 },<br>
+{comment: 'Ambiance needs work', rating: 3 },<br>
+{comment: 'I DONT LIKE BURGERS', rating: 1 },<br>
+]; <br>
+    </code>
+
+  </div>
+
+  
+  <style>
+    .displayNone {
+      display: none;
+    }
+  </style>
+</body>
+
+</html>
